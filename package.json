@@ -8,7 +8,16 @@
   "scripts": {
     "start": "node ./dist",
     "dev": "ts-node ./src",
-    "build": "tsc"
+    "build": "tsc",
+    "test": "jest"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "includeCoverage": true,
+    "includeCoverageFrom": [
+      "src/**/*/{ts,js}"
+    ]
   },
   "dependencies": {
     "typescript": "^4.3.5"
