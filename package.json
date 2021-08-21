@@ -1,0 +1,8 @@
+{
+  "name": "tdd-kata-22-Aug-2021",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/zfchung/tdd-kata-22-Aug-2021.git",
+  "author": "ZF Chung (Zack) <zfchung1@gmail.com>",
+  "license": "MIT"
+}
