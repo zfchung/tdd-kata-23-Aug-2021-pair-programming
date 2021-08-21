@@ -5,6 +5,10 @@
   "repository": "https://github.com/zfchung/tdd-kata-22-Aug-2021.git",
   "author": "ZF Chung (Zack) <zfchung1@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "run": "node ./dist",
+    "build": "tsc"
+  },
   "dependencies": {
     "typescript": "^4.3.5"
   }
