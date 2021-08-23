@@ -1,5 +1,4 @@
 export function add(input: string): number {
-  if (input) {
-    return parseInt(input);
-  } else return 0;
+  const newValue = input ? input : "0";
+  return parseInt(newValue);
 }
