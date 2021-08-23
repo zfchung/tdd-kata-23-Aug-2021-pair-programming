@@ -6,6 +6,10 @@ export function add(input: string): number {
   const commonDelimiterValue = cleanValue.replaceAll(delimiter, ",");
   const valueList = commonDelimiterValue.split(",");
   const valueListNumbers = valueList.map(Number);
+  const hasNegative = valueListNumbers.some((value) => value < 0);
+  if (hasNegative) {
+    throw "negatives are not allowed";
+  }
   const sumValueList = sumListItems(valueListNumbers);
   return sumValueList;
 }
