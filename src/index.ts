@@ -1,5 +1,17 @@
 export function add(input: string): number {
   const newValue = input ? input : "0";
+  const hasCustomDelimiter: boolean = newValue.startsWith("//");
+  const delimiter = hasCustomDelimiter ? newValue.charAt(2) : "\n";
+  const cleanValue = hasCustomDelimiter ? newValue.split("\n")[1] : newValue;
+  const commonDelimiterValue = cleanValue.replaceAll(delimiter, ",");
+  const valueList = commonDelimiterValue.split(",");
+  const valueListNumbers = valueList.map(Number);
+  const sumValueList = sumListItems(valueListNumbers);
+  return sumValueList;
+}
+
+export function add2(input: string): number {
+  const newValue = input ? input : "0";
   if (newValue.substring(0, 2) == "//") {
     const delimiter = newValue.charAt(2);
     const newCommonDelimiterValue = newValue.split("\n")[1];
