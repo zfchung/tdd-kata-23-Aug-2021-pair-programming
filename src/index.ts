@@ -8,7 +8,10 @@ export function add(input: string): number {
   const valueListNumbers = valueList.map(Number);
   const hasNegative = valueListNumbers.some((value) => value < 0);
   if (hasNegative) {
-    throw "negatives are not allowed";
+    const negativeValues = valueListNumbers
+      .filter((value) => value < 0)
+      .join(",");
+    throw "negatives are not allowed: " + negativeValues;
   }
   const sumValueList = sumListItems(valueListNumbers);
   return sumValueList;

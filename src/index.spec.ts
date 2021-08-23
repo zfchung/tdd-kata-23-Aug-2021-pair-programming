@@ -25,8 +25,18 @@ describe("Test add function", () => {
   });
   it("should recognize custom delimiters", () => {
     expect(add("//;\n1;2;3")).toEqual(6);
+    expect(add("//@\n1@2@3")).toEqual(6);
   });
   it("should throw exception when there are negative numbers", () => {
-    expect(() => add("//;\n1;2,-3")).toThrow("negatives are not allowed");
+    expect(() => add("//;\n1;2,-3")).toThrow("negatives are not allowed: -3");
+    expect(() => add("//@\n1@-2@-333")).toThrow(
+      "negatives are not allowed: -2,-333"
+    );
+    expect(() => add("-21\n-2\n-3")).toThrow(
+      "negatives are not allowed: -21,-2,-3"
+    );
+    expect(() => add("-21\n-2,-3")).toThrow(
+      "negatives are not allowed: -21,-2,-3"
+    );
   });
 });
