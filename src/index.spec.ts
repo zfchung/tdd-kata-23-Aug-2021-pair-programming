@@ -9,9 +9,13 @@ describe("Test add function", () => {
     expect(add("11")).toEqual(11);
     expect(add("999")).toEqual(999);
   });
-  it("should return summation of two number", () => {
+  it("should return summation of two numbers", () => {
     expect(add("1,2")).toEqual(3);
     expect(add("11,1")).toEqual(12);
     expect(add("999,11")).toEqual(1010);
+  });
+  it("should return summation of unknown amount of numbers", () => {
+    expect(add("1,2,1,1,1,1,1,1,1")).toEqual(10);
+    expect(add("11,1,999")).toEqual(1011);
   });
 });
