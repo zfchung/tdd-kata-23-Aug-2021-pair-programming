@@ -23,4 +23,7 @@ describe("Test add function", () => {
     expect(add("1\n2,1,1,1,1,1,1,1")).toEqual(10);
     expect(add("11\n1\n999")).toEqual(1011);
   });
+  it("should recognize custom delimiters", () => {
+    expect(add("//;\n1;2;3")).toEqual(6);
+  });
 });
