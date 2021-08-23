@@ -18,4 +18,9 @@ describe("Test add function", () => {
     expect(add("1,2,1,1,1,1,1,1,1")).toEqual(10);
     expect(add("11,1,999")).toEqual(1011);
   });
+  it("should recognize numbers separated by commas and new line '\n'", () => {
+    expect(add("1\n2,3")).toEqual(6);
+    expect(add("1\n2,1,1,1,1,1,1,1")).toEqual(10);
+    expect(add("11\n1\n999")).toEqual(1011);
+  });
 });
